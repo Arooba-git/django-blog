@@ -128,11 +128,12 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-MEDIA_URL='/myimages/'
-MEDIA_ROOT= path.join(BASE_DIR, 'myimages')
+MEDIA_URL='/my_images/'
+MEDIA_ROOT= path.join(BASE_DIR, 'my_images')
 
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [path.join(BASE_DIR, 'my_static_assets')]
 
-STATIC_URL = "static/"
-STATICFILES_DIRS = ["static_assets"] # for dev
-DEFAULT_FILE_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # for production
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticroot') # for dev
+
+# DEFAULT_FILE_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
